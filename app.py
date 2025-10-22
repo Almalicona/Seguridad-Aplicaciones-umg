@@ -67,7 +67,7 @@ def login():
 
         if user and user.check_password(password):
             login_user(user)
-            return redirect(url_for('products'))
+            return redirect(url_for('dashboard'))
         flash('Credenciales incorrectas', 'danger')
     return render_template('login.html')
 
