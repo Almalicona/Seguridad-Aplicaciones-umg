@@ -67,7 +67,7 @@ def login():
 
         if user and user.check_password(password):
             login_user(user)
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('products'))
         flash('Credenciales incorrectas', 'danger')
     return render_template('login.html')
 
@@ -84,7 +84,6 @@ def products():
 def logout():
     logout_user()
     return redirect(url_for('index'))
-    
 @app.route('/dashboard')
 @login_required
 def dashboard():
