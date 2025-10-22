@@ -28,7 +28,7 @@ jobs:
         pip install -r requirements.txt
         pip install pytest bandit
 
-    # 4️⃣ Ejecutar pruebas automatizadas
+    # 4️⃣ Pruebas automatizadas
     - name: Run tests
       run: pytest
 
@@ -36,7 +36,11 @@ jobs:
     - name: Security scan with Bandit
       run: bandit -r .
 
-    # 6️⃣ Despliegue en servidor de pruebas
+    # 6️⃣ Construcción de la aplicación
+    - name: Build application
+      run: echo "Aquí podrías construir tu app o preparar contenedor Docker si lo usas"
+
+    # 7️⃣ Despliegue en entorno de pruebas
     - name: Deploy to testing server
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
