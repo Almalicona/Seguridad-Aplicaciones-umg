@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Bienvenido {{ current_user.username }}</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🛒 Ir a la Tienda</h5>
+                    <p class="card-text">Explora nuestros productos y compra al instante.</p>
+                    <a href="{{ url_for('products') }}" class="btn btn-primary btn-block">Entrar ahora</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👤 Mi Cuenta</h5>
+                    <p class="card-text">Administra tus datos y preferencias.</p>
+                    <a href="#" class="btn btn-secondary btn-block">Ver perfil</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🚪 Cerrar Sesión</h5>
+                    <p class="card-text">Salir de forma segura del sistema.</p>
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger btn-block">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
